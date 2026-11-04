@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "65f1a2b3c4d5e6f7a8b9c0d3",
+    "name": "Burger King",
+    "isVeg": false,
+    "address": "Main Market, City",
+    "ratings": 4.5,
+    "numOfReviews": 100,
+    "location": {
+      "type": "Point",
+      "coordinates": [77.2090, 28.6139]
+    },
+    "reviews": [],
+    "images": [{"public_id": "dummy3", "url": "https://res.cloudinary.com/df8dnez80/image/upload/v1710000000/burgerking.jpg"}]
+  },
+  {
+    "_id": "65f1a2b3c4d5e6f7a8b9c0d4",
+    "name": "Domino's",
+    "isVeg": false,
+    "address": "City Center",
+    "ratings": 4.2,
+    "numOfReviews": 80,
+    "location": {
+      "type": "Point",
+      "coordinates": [77.2190, 28.6239]
+    },
+    "reviews": [],
+    "images": [{"public_id": "dummy4", "url": "https://res.cloudinary.com/df8dnez80/image/upload/v1710000000/dominos.jpg"}]
+  }
+]
+
