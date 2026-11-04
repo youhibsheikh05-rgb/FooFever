@@ -222,3 +222,78 @@ body {
   padding: 0 20px !important;
   border: none !important;
 }
+/* --- RESTAURANT CARD STYLING --- */
+.restaurant-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-card .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.restaurant-card .card-body {
+  padding: 15px;
+}
+
+.restaurant-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.restaurant-card .card-text {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.ratings {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+
+.ratings .star {
+  color: #f1c40f;
+  font-size: 1.1rem;
+  margin-right: 3px;
+}
+
+.ratings .rating-text {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.ratings .review-text {
+  color: #747d8c;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status-badge.veg {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+}
+
+.status-badge.non-veg {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #c62828;
+}
