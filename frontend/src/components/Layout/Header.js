@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link,Route,Routes} from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../actions/userActions";
-
 
 import Search from "./Search";
 import "../../App.css";
@@ -23,38 +22,33 @@ const Header = () => {
   return (
     <>
       <nav className="navbar row sticky-top">
-        {/* logo */}
-        <div className="col-12 col-md-3">
+        {/* Logo */}
+        <div className="col-12 col-md-3 text-center text-md-left">
           <Link to="/">
-            <img src="/images/logo.png" alt="logo" className="logo" />
+            <img src="/images/logo.png" alt="logo" className="logo" style={{ height: "50px" }} />
           </Link>
         </div>
 
-        {/* search bar and search icon */}
-
+        {/* Search Bar */}
         <div className="col-12 col-md-6 mt-2 mt-md-0">
           <Routes>
-            <Route path ="/" element ={<Search />} />
-            <Route path = "/eats/stores/search/:keyword" element ={<Search />} />
+            <Route path="/" element={<Search />} />
+            <Route path="/eats/stores/search/:keyword" element={<Search />} />
           </Routes>
         </div>
 
-        {/* Login */}
-        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-          {/* ml-> margin left (3unit from left) */}
+        {/* Cart & User */}
+        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center text-md-right">
           <Link to="/cart" style={{ textDecoration: "none" }}>
-            <span className="ml-3" id="cart">
-              Cart
-            </span>
-            <span className="ml-1" id="cart_count">
-              {cartItems.length}
-            </span>
+            <span className="ml-3" id="cart">Cart</span>
+            <span className="ml-1" id="cart_count">{cartItems.length}</span>
           </Link>
+
           {user ? (
             <div className="ml-4 dropdown d-inline">
               <Link
                 to="/"
-                className="btn dropdown-toggle text-white mr-4"
+                className="btn dropdown-toggle text-dark mr-4"
                 type="button"
                 id="dropDownMenuButton"
                 data-toggle="dropdown"
@@ -68,29 +62,13 @@ const Header = () => {
                     className="rounded-circle"
                   ></img>
                 </figure>
-
                 <span>{user && user.name}</span>
               </Link>
 
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropDownMenuButton"
-              >
-                <Link className="dropdown-item" to="/eats/orders/me/myOrders">
-                  Orders
-                </Link>
-
-                <Link className="dropdown-item" to="/users/me">
-                  Profile
-                </Link>
-
-                <Link
-                  className="dropdown-item text-danger"
-                  to="/"
-                  onClick={logoutHandler}
-                >
-                  Logout
-                </Link>
+              <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+                <Link className="dropdown-item" to="/eats/orders/me/myOrders">Orders</Link>
+                <Link className="dropdown-item" to="/users/me">Profile</Link>
+                <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>Logout</Link>
               </div>
             </div>
           ) : (
