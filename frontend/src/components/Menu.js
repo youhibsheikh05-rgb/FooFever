@@ -9,7 +9,7 @@ const Menu = () => {
   const dispatch = useDispatch();
   
   // Redux se cart check kar rahe hain
-  const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems } = useSelector((state) => state.cart || {});
 
   useEffect(() => {
     if (id) {
@@ -18,9 +18,11 @@ const Menu = () => {
   }, [dispatch, id]);
 
   // ==========================================
-  // DUMMY DATA (Kyunki database se nahi aa raha)
+  // DUMMY DATA (Burger King vs Pizza Hut)
   // ==========================================
-  const dummyMenuData = [
+  
+  // Burger King ka menu
+  const burgerKingMenu = [
     {
       _id: "menu1",
       category: "Fast Food",
@@ -37,11 +39,11 @@ const Menu = () => {
         },
         {
           _id: "65f1a2b3c4d5e6f7a8b9c0d2",
-          name: "Veggie Pizza",
-          price: 250,
-          description: "Loaded with fresh vegetables and mozzarella cheese.",
+          name: "Veggie Burger",
+          price: 120,
+          description: "Healthy and tasty veggie burger.",
           ratings: 4.2,
-          images: [{ url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" }],
+          images: [{ url: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=500" }],
           stock: 30,
           numOfReviews: 5,
         },
@@ -65,11 +67,63 @@ const Menu = () => {
     },
   ];
 
+  // Pizza Hut ka menu
+  const pizzaHutMenu = [
+    {
+      _id: "menu3",
+      category: "Pizzas",
+      items: [
+        {
+          _id: "65f1a2b3c4d5e6f7a8b9c0d4",
+          name: "Fajita Pizza",
+          price: 850,
+          description: "Loaded with chicken fajita, onions, and capsicum.",
+          ratings: 4.7,
+          images: [{ url: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" }],
+          stock: 40,
+          numOfReviews: 120,
+        },
+        {
+          _id: "65f1a2b3c4d5e6f7a8b9c0d5",
+          name: "Pepperoni Pizza",
+          price: 950,
+          description: "Classic pepperoni with extra mozzarella cheese.",
+          ratings: 4.9,
+          images: [{ url: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500" }],
+          stock: 25,
+          numOfReviews: 200,
+        },
+      ],
+    },
+    {
+      _id: "menu4",
+      category: "Sides",
+      items: [
+        {
+          _id: "65f1a2b3c4d5e6f7a8b9c0d6",
+          name: "Garlic Bread",
+          price: 250,
+          description: "Freshly baked garlic bread with cheese.",
+          ratings: 4.4,
+          images: [{ url: "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?w=500" }],
+          stock: 100,
+          numOfReviews: 80,
+        },
+      ],
+    },
+  ];
+
+  // ID ke hisaab se menu select karo
+  // Agar URL mein Pizza Hut ki ID hai toh pizza menu, warna burger menu
+  // (URL check karne ke liye hum 'id' use kar rahe hain)
+  // Maan lo Burger King ki ID '6ae9cc754b4d5da5190e9bd4' hai
+  const currentMenu = id === "6ae9cc754b4d5da5190e9bd4" ? burgerKingMenu : pizzaHutMenu;
+
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Our Menu</h1>
 
-      {dummyMenuData.map((menu) => (
+      {currentMenu.map((menu) => (
         <div key={menu._id} className="mb-5">
           <h2 className="category-title">{menu.category}</h2>
           <hr />
