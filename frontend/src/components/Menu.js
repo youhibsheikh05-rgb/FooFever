@@ -17,10 +17,7 @@ const Menu = () => {
     }
   }, [dispatch, id]);
 
-  // ==========================================
-  // DUMMY DATA (Burger King vs Pizza Hut)
-  // ==========================================
-  
+
   // Burger King ka menu
   const burgerKingMenu = [
     {
@@ -113,10 +110,6 @@ const Menu = () => {
     },
   ];
 
-  // ID ke hisaab se menu select karo
-  // Agar URL mein Pizza Hut ki ID hai toh pizza menu, warna burger menu
-  // (URL check karne ke liye hum 'id' use kar rahe hain)
-  // Maan lo Burger King ki ID '6ae9cc754b4d5da5190e9bd4' hai
   const currentMenu = id === "6ae9cc754b4d5da5190e9bd4" ? burgerKingMenu : pizzaHutMenu;
 
   return (

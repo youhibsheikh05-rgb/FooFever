@@ -6,7 +6,6 @@ import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
 const Cart = () => {
   const dispatch = useDispatch();
   
-  // Safe access to Redux state
   const storeState = useSelector((state) => state);
   const cartItems = storeState.cart?.cartItems || storeState.cartItems || [];
 
@@ -64,7 +63,6 @@ const Cart = () => {
               <h4 className="mb-4">Order Summary</h4>
               <div className="d-flex justify-content-between mb-2">
                 <span>Subtotal</span>
-                {/* Yahan Rs. kar diya hai */}
                 <span>Rs. {cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)}</span>
               </div>
               <div className="d-flex justify-content-between mb-2">

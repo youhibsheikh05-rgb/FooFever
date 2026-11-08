@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const Menu = require("./models/menu"); // Path check kar lena agar alag ho
+const Menu = require("./models/menu"); 
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -12,7 +12,6 @@ mongoose
   .then(async () => {
     console.log("DB Connected. Adding menu...");
     
-    // Yahan woh ID daalo jo tumhare URL mein hai
     const restaurantId = "6ae9cc754b4d5da5190e9bd4"; 
 
     const menuData = {

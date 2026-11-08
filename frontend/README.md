@@ -1,53 +1,55 @@
-# FoodExpress (MERN Stack Food Delivery App)
+# FooFever - MERN Stack Food Delivery App 🍔
 
-A full-stack food delivery web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). This project allows users to browse restaurants, add food items to the cart, and place orders securely.
+A full-stack food delivery web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). This project allows users to browse restaurants, view dynamic menus, add food items to the cart, and proceed to checkout.
 
-## Live Demo
-*(Yahan baad mein apna live link daalna)*
+## 🚀 Key Features
+- **User Authentication**: Secure Login and Signup using JWT.
+- **Browse Restaurants**: View multiple restaurants with their ratings and locations.
+- **Dynamic Menus**: Each restaurant has its own unique menu and food items.
+- **Shopping Cart**: Add, remove, and update food quantities seamlessly.
+- **Modern UI**: Clean, responsive, and modern design using React and custom CSS.
+- **PKR Currency**: Prices are displayed in Pakistani Rupees (Rs.).
 
-## Features
-- User Authentication (Login/Signup)
-- Browse Restaurants and Menus
-- Search Restaurants
-- Shopping Cart Functionality
-- Secure Payment Gateway (Stripe)
-- Order History & Tracking
-- Admin Panel (if applicable)
+## 💻 Tech Stack
+- **Frontend**: React.js, Redux, React Router, Bootstrap, CSS3
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB Atlas
+- **Authentication**: JWT (JSON Web Tokens)
 
-## Tech Stack
-- **Frontend:** React.js, Redux, Bootstrap, CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB Atlas
-- **Other Tools:** Cloudinary (Image Upload), Stripe (Payments)
+## ⚙️ Installation & Setup
 
-## Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/youhibsheikh05-rgb/FooFever.git
+   cd FooFever
+   ```
 
-1. Clone the repository:
-   `git clone https://github.com/TumharaUsername/TumharaRepoName.git`
+2. **Install Backend Dependencies:**
+   ```bash
+   cd backend
+   npm install
+   ```
 
-2. Install Backend dependencies:
-   `cd backend`
-   `npm install`
+3. **Install Frontend Dependencies:**
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-3. Install Frontend dependencies:
-   `cd frontend`
-   `npm install`
-
-4. Create a `config.env` file in the `backend/config/` directory and add your credentials:
+4. **Environment Variables:**
+   Create a `config.env` file in the `backend/config/` folder and add:
    ```env
    PORT=4000
-   DB_LOCAL_URI=your_mongodb_uri
-   JWT_SECRET=your_jwt_secret
+   DB_LOCAL_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   ```
 
-5. Start the Backend:
-npm run dev
+5. **Run the Application:**
+   - **Backend:** `npm run dev` (inside `backend` folder)
+   - **Frontend:** `npm start` (inside `frontend` folder)
 
-Start the Frontend:
-cd frontend
-npm start
-
-6. About the Author
-youhibbullah sheikh
-linkedin: www.linkedin.com/in/youhib-sheikh-b63a15381
-Github:https://github.com/youhibsheikh05-rgb
-
+## 👨‍💻 Author
+**Youhibbullah Sheikh**
+- GitHub: [@youhibsheikh05-rgb](https://github.com/youhibsheikh05-rgb)
+- LinkedIn: [Youhib Sheikh](https://www.linkedin.com/in/youhib-sheikh-b63a15381)
+``
