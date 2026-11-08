@@ -4,11 +4,13 @@
     "backend": {
       "root": "backend",
       "runtime": "node",
-      "entrypoint": "vercel-server.js"
+      "entrypoint": "vercel-server.js",
+      "installCommand": "npm install --legacy-peer-deps"
     },
     "frontend": {
       "root": "frontend",
-      "framework": "create-react-app"
+      "framework": "create-react-app",
+      "installCommand": "npm install --legacy-peer-deps"
     }
   },
   "rewrites": [
